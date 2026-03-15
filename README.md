@@ -1,43 +1,124 @@
 # PawPal+ (Module 2 Project)
 
-You are building **PawPal+**, a Streamlit app that helps a pet owner plan care tasks for their pet.
+**PawPal+** is a smart pet care management system that helps pet owners plan and organize care tasks for their furry friends.
 
-## Scenario
+## 🎯 Project Overview
 
-A busy pet owner needs help staying consistent with pet care. They want an assistant that can:
+- **Course:** AI110 - Foundations of AI Engineering
+- **Project:** Module 2 - Show What You Know
+- **Due:** Sunday, March 29th at 11:59PM PDT
 
-- Track pet care tasks (walks, feeding, meds, enrichment, grooming, etc.)
-- Consider constraints (time available, priority, owner preferences)
-- Produce a daily plan and explain why it chose that plan
+## 📋 What We Built
 
-Your job is to design the system first (UML), then implement the logic in Python, then connect it to the Streamlit UI.
+PawPal+ is a complete pet care management system with:
 
-## What you will build
+- **OOP Design**: Modular Python classes (Owner, Pet, Task, PawPalSystem)
+- **Scheduling Algorithm**: Priority-based task scheduling with time constraints
+- **Conflict Detection**: Identifies overlapping tasks
+- **Recurring Tasks**: Support for daily, weekly, biweekly, monthly tasks
+- **Streamlit UI**: Interactive web interface for managing pets and tasks
+- **Comprehensive Tests**: 15 pytest test cases covering core functionality
 
-Your final app should:
+## 🏗️ Architecture
 
-- Let a user enter basic owner + pet info
-- Let a user add/edit tasks (duration + priority at minimum)
-- Generate a daily schedule/plan based on constraints and priorities
-- Display the plan clearly (and ideally explain the reasoning)
-- Include tests for the most important scheduling behaviors
+### Core Classes
 
-## Getting started
+```
+Owner → Pet → Task
+   ↓
+PawPalSystem (manages all)
+```
+
+### Key Features
+
+1. **Owner Management**: Create owners with email and track their pets
+2. **Pet Profiles**: Track multiple pets with species, breed, age
+3. **Task Management**: Create tasks with duration, priority, type, scheduled time
+4. **Smart Scheduling**: Generate daily plans based on priority and time available
+5. **Conflict Detection**: Automatically detect overlapping tasks
+6. **Recurring Tasks**: Support for daily, weekly, biweekly, monthly patterns
+
+## 🚀 Getting Started
 
 ### Setup
 
 ```bash
+# Clone the repository
+git clone https://github.com/OldMack/ai110-module2show-pawpal-starter.git
+cd ai110-module2show-pawpal-starter
+
+# Create virtual environment
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
+
+# Activate (Windows)
+.venv\Scripts\activate
+
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### Suggested workflow
+### Running the App
 
-1. Read the scenario carefully and identify requirements and edge cases.
-2. Draft a UML diagram (classes, attributes, methods, relationships).
-3. Convert UML into Python class stubs (no logic yet).
-4. Implement scheduling logic in small increments.
-5. Add tests to verify key behaviors.
-6. Connect your logic to the Streamlit UI in `app.py`.
-7. Refine UML so it matches what you actually built.
+```bash
+# Run Streamlit UI
+streamlit run app.py
+
+# Or run CLI demo
+python cli_demo.py
+```
+
+### Running Tests
+
+```bash
+# Run all tests
+python -m pytest test_pawpal.py -v
+
+# Run with coverage
+python -m pytest test_pawpal.py -v --cov
+```
+
+## 📁 Project Structure
+
+```
+.
+├── app.py              # Streamlit UI (frontend)
+├── pawpal_system.py    # Core OOP system (backend logic)
+├── cli_demo.py         # Command-line demo script
+├── test_pawpal.py      # Pytest test suite (15 tests)
+├── UML.md             # System design diagram
+├── README.md          # This file
+├── requirements.txt    # Python dependencies
+└── reflection.md      # AI collaboration reflection
+```
+
+## 🧪 Test Results
+
+All 15 tests passing:
+
+- ✅ Task creation and management
+- ✅ Pet creation and task assignment  
+- ✅ Owner management
+- ✅ Priority sorting
+- ✅ Conflict detection
+- ✅ Daily plan generation
+- ✅ Time constraint handling
+- ✅ Recurring task generation
+
+## 🎓 Learning Outcomes
+
+- Designed modular system using Python OOP
+- Implemented scheduling algorithms
+- Created UML diagrams with Mermaid.js
+- Built interactive Streamlit UI
+- Wrote comprehensive pytest tests
+- Documented design decisions
+
+## 👥 Collaboration
+
+This project was completed with AI assistance using iterative prompts for:
+- UML diagram generation
+- Class structure design
+- Algorithm implementation
+- Test case development
+
+See `reflection.md` for detailed reflection on AI-human collaboration.
